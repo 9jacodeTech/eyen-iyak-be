@@ -33,3 +33,7 @@ export class InvalidToken extends Unauthorized {
 export class InvalidAuthorizationHeaders extends Unauthorized {
   message = 'The headers you inputed are malformed invalid';
 }
+
+export class HeroNotFound extends NotFound {
+  message = 'Hero Section Not Found'
+}

@@ -54,3 +54,15 @@ export interface AboutPageContent {
     subText3: string;
   };
 }
+
+export type heroSectionDetailInput = {
+  header: string;
+  subHeader: string;
+  backGroundImageURL: string;
+}
+
+export type heroSectionDetail = heroSectionDetailInput & {
+  createdAt: Date;
+  updatedAt: Date;
+  id: string;
+}
