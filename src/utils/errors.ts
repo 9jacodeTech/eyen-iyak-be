@@ -35,5 +35,8 @@ export class InvalidAuthorizationHeaders extends Unauthorized {
 }
 
 export class HeroNotFound extends NotFound {
-  message = 'Hero Section Not Found'
+  message = 'Hero Section Not Found';
+}
+export class NewsNotFound extends NotFound {
+  message: 'News Not Found';
 }

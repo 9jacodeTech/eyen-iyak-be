@@ -1,4 +1,9 @@
-import { heroSectionDetail, heroSectionDetailInput } from "entities";
+import type {
+  HeroSectionDetail,
+  HeroSectionDetailInput,
+  NewsDetail,
+  NewsDetailInput,
+} from 'entities';
 
 interface TokenData {
   email: string;
@@ -15,8 +20,17 @@ export interface ITokenManager {
 }
 
 export interface IHeroSectionDataGateway {
-  fetch: () => Promise<heroSectionDetail[]>;
-  create: (data: heroSectionDetailInput) => Promise<heroSectionDetail>;
-  update: (id: string, data: heroSectionDetailInput) => Promise<heroSectionDetail>;
-  delete: (id:string) => Promise<any>;
+  fetch: () => Promise<HeroSectionDetail[]>;
+  create: (data: HeroSectionDetailInput) => Promise<HeroSectionDetail>;
+  update: (
+    id: string,
+    data: HeroSectionDetailInput
+  ) => Promise<HeroSectionDetail>;
+  delete: (id: string) => Promise<any>;
+}
+export interface INewsDataGateway {
+  fetch: () => Promise<NewsDetail[]>;
+  create: (data: NewsDetailInput) => Promise<NewsDetail>;
+  update: (id: string, data: NewsDetailInput) => Promise<NewsDetail>;
+  delete: (id: string) => Promise<any>;
 }

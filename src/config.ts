@@ -18,4 +18,6 @@ export const FEATURE_TOGGLE = new Set(
     .map((text) => text.trim())
 );
 
-export const HERO_SECTION_FILE_ENV = process.env.HERO_SECTION_FILE || 'hero-section.json';
+export const HERO_SECTION_FILE_ENV =
+  process.env.HERO_SECTION_FILE || 'hero-section.json';
+export const NEWS_FILE_ENV = process.env.NEWS_FILE || 'news.json';

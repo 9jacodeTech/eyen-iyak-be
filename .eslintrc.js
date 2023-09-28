@@ -17,6 +17,7 @@ module.exports = {
     '@typescript-eslint/no-extraneous-class': 'off',
     '@typescript-eslint/await-thenable': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/consistent-type-definitions': 'off',
     'no-console': [
       'warn',
       {
