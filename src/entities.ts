@@ -54,3 +54,18 @@ export interface AboutPageContent {
     subText3: string;
   };
 }
+
+export type ProjectDetailInput = {
+  name: string;
+  date: Date;
+  description: string;
+  status: 'current' | 'upcoming' | 'Permanent' | 'Archive';
+  imageURL: string;
+  setAsHero: boolean;
+};
+
+export type ProjectDetail = ProjectDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};

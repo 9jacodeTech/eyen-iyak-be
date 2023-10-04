@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import imagesRouter from './routes/images-routes';
 import authRouter from './routes/auth-routes';
+import projectRouter from './routes/project';
 
 import { PORT } from 'config';
 
@@ -15,6 +16,7 @@ app.get('/', (req, res) => res.send('Connected'));
 
 app.use('/api/images', imagesRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/projects', projectRouter);
 
 app.listen(PORT, () => {
   console.log(`Server started on ${PORT}`);
