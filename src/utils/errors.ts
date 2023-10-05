@@ -1,6 +1,6 @@
 import { type ValidationError } from 'joi';
 
-export class CustomError extends Err or {}
+export class CustomError extends Error {}
 export class NotFound extends CustomError {
   message = 'Resource not found';
 }
