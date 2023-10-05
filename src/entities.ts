@@ -1,4 +1,4 @@
-export interface ProjectInput {
+export type ProjectInput = {
   imageURL: string;
   heading: string;
   description: string;
@@ -9,13 +9,13 @@ export interface ProjectInput {
   waitlistLink: string;
   waitlistLabel: string;
   status: 'ongoing' | 'current' | 'upcoming';
-}
+};
 
 export type Project = ProjectInput & {
   id: string;
 };
 
-export interface SlideInput {
+export type SlideInput = {
   title: string;
   description: string;
   button1URL: string;
@@ -23,9 +23,9 @@ export interface SlideInput {
   button1Label: string;
   button2Label: string;
   imageURLs: string[];
-}
+};
 
-export interface AboutPageContent {
+export type AboutPageContent = {
   hero: {
     subText: string;
     title: string;
@@ -53,7 +53,8 @@ export interface AboutPageContent {
     subText2: string;
     subText3: string;
   };
-}
+};
+
 
 export type ProjectDetailInput = {
   name: string;
@@ -69,14 +70,29 @@ export type ProjectDetail = ProjectDetailInput & {
   createdAt: Date;
   updatedAt: Date;
 };
+
 export type heroSectionDetailInput = {
   header: string;
   subHeader: string;
   backGroundImageURL: string;
-}
+};
 
-export type heroSectionDetail = heroSectionDetailInput & {
+export type HeroSectionDetail = HeroSectionDetailInput & {
   createdAt: Date;
   updatedAt: Date;
   id: string;
-}
+};
+
+export type NewsDetailInput = {
+  title: string;
+  body: string;
+  author: string;
+  date: Date;
+  imageURL: string;
+};
+
+export type NewsDetail = NewsDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};

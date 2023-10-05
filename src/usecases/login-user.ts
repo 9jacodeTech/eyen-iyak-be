@@ -32,8 +32,7 @@ export class LoginUserUsecase {
       tokenData.iss === 'accounts.google.com' ||
       tokenData.iss === 'https://accounts.google.com';
 
-    if (!tokenIsFromGoogle)
-      throw new InvalidToken('The token you inputed is invalid');
+    if (!tokenIsFromGoogle) throw new InvalidToken();
 
     if (!tokenData.emailIsVerified)
       throw new InvalidToken('Email is not verified');
