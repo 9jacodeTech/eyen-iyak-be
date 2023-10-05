@@ -8,7 +8,7 @@ const ALLOWED_ADMIN_EMAILS_STR = process.env.ALLOWED_ADMIN_EMAILS || '';
 export const ALLOWED_ADMIN_EMAILS = new Set(
   ALLOWED_ADMIN_EMAILS_STR.split(',')
 );
-export const PORT = process.env.PORT || 5142;
+export const PORT = process.env.PORT || 5143;
 
 const FEATURE_TOGGLE_ENV = process.env.FEATURE_TOGGLE || '';
 
@@ -17,3 +17,5 @@ export const FEATURE_TOGGLE = new Set(
     .split(',')
     .map((text) => text.trim())
 );
+
+export const HERO_SECTION_FILE_ENV = process.env.HERO_SECTION_FILE || 'hero-section.json';
