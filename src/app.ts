@@ -1,11 +1,12 @@
 import 'dotenv/config';
+import 'express-async-errors';
 import express from 'express';
 import cors from 'cors';
 import imagesRouter from './routes/images-routes';
 import authRouter from './routes/auth-routes';
 import heroRouter from './routes/hero-routes';
-import 'express-async-errors';
 import { handleErrors } from 'utils/helpers';
+import newsRouter from './routes/news-routes';
 
 import { PORT } from 'config';
 
@@ -19,10 +20,11 @@ app.get('/', (req, res) => res.send('Connected'));
 app.use('/api/images', imagesRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/hero', heroRouter);
+app.use('/api/news', newsRouter);
 
 app.use((err, req, res, next) => {
-  return handleErrors(res, err)
-})
+  return handleErrors(res, err);
+});
 
 app.listen(PORT, () => {
   console.log(`Server started on ${PORT}`);
