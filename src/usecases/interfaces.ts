@@ -1,4 +1,5 @@
 import { ProjectDetail, ProjectDetailInput } from "entities";
+import { heroSectionDetail, heroSectionDetailInput } from "entities";
 
 interface TokenData {
   email: string;
@@ -18,5 +19,9 @@ export interface IProjectDataGateway {
   fetch: () => Promise<ProjectDetail[]>;
   create: (data: ProjectDetailInput) => Promise<ProjectDetail>;
   update: (id: string, data: ProjectDetailInput) => Promise<ProjectDetail>;
+export interface IHeroSectionDataGateway {
+  fetch: () => Promise<heroSectionDetail[]>;
+  create: (data: heroSectionDetailInput) => Promise<heroSectionDetail>;
+  update: (id: string, data: heroSectionDetailInput) => Promise<heroSectionDetail>;
   delete: (id:string) => Promise<any>;
 }

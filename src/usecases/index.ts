@@ -6,6 +6,8 @@ import { JWT_SECRET } from 'config';
 import { FileServiceFactory } from 'services';
 import { ProjectDataGateway } from 'data-gateway/project-data-gateway';
 import { ProjectUsecase } from './project';
+import { HeroSectionUseCase } from './hero-section';
+import { HeroSectionDataGateway } from 'data-gateway/hero-section-data-gateway';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -22,6 +24,8 @@ export const generateUploadURLUsecase = new GenerateUploadURLUsecase(
 
 export const projectUsecase = new ProjectUsecase(
   new ProjectDataGateway(fileService)
+export const heroSectionUsecase = new HeroSectionUseCase(
+  new HeroSectionDataGateway(fileService)
 );
 
 export * from './interfaces';

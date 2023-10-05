@@ -69,3 +69,14 @@ export type ProjectDetail = ProjectDetailInput & {
   createdAt: Date;
   updatedAt: Date;
 };
+export type heroSectionDetailInput = {
+  header: string;
+  subHeader: string;
+  backGroundImageURL: string;
+}
+
+export type heroSectionDetail = heroSectionDetailInput & {
+  createdAt: Date;
+  updatedAt: Date;
+  id: string;
+}
