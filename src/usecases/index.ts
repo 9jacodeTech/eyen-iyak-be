@@ -10,6 +10,8 @@ import { HeroSectionUseCase } from './hero-section';
 import { HeroSectionDataGateway } from 'data-gateway/hero-section-data-gateway';
 import { NewsUseCase } from './news';
 import { NewsDataGateway } from 'data-gateway/news-data-gateway';
+import { ProgramUsecase } from './program';
+import { ProgramDataGateway } from 'data-gateway/program-data-gateway';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -26,9 +28,16 @@ export const generateUploadURLUsecase = new GenerateUploadURLUsecase(
 
 export const projectUsecase = new ProjectUsecase(
   new ProjectDataGateway(fileService)
+);
+
 export const heroSectionUsecase = new HeroSectionUseCase(
   new HeroSectionDataGateway(fileService)
 );
+
 export const newsUsecase = new NewsUseCase(new NewsDataGateway(fileService));
+
+export const programUsecase = new ProgramUsecase(
+  new ProgramDataGateway(fileService)
+);
 
 export * from './interfaces';

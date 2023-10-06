@@ -55,7 +55,6 @@ export type AboutPageContent = {
   };
 };
 
-
 export type ProjectDetailInput = {
   name: string;
   date: Date;
@@ -71,7 +70,7 @@ export type ProjectDetail = ProjectDetailInput & {
   updatedAt: Date;
 };
 
-export type heroSectionDetailInput = {
+export type HeroSectionDetailInput = {
   header: string;
   subHeader: string;
   backGroundImageURL: string;
@@ -92,6 +91,21 @@ export type NewsDetailInput = {
 };
 
 export type NewsDetail = NewsDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type ProgramDetailInput = {
+  name: string;
+  description: string;
+  buttonLabel: string;
+  registrationLink: string;
+  donationLink: string;
+  imageURL: string;
+};
+
+export type ProgramDetail = ProgramDetailInput & {
   id: string;
   createdAt: Date;
   updatedAt: Date;

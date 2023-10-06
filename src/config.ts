@@ -19,7 +19,10 @@ export const FEATURE_TOGGLE = new Set(
 );
 
 export const PROJECT_FILE_ENV = process.env.PROJECT_FILE || 'projects.json';
-export const HERO_SECTION_FILE_ENV = process.env.HERO_SECTION_FILE || 'hero-section.json';
+
 export const HERO_SECTION_FILE_ENV =
   process.env.HERO_SECTION_FILE || 'hero-section.json';
+
 export const NEWS_FILE_ENV = process.env.NEWS_FILE || 'news.json';
+
+export const PROGRAM_FILE_ENV = process.env.PROGRAM_FILE || 'programs.json';
