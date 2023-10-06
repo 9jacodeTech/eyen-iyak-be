@@ -55,7 +55,23 @@ export type AboutPageContent = {
   };
 };
 
-export type HeroSectionDetailInput = {
+
+export type ProjectDetailInput = {
+  name: string;
+  date: Date;
+  description: string;
+  status: 'current' | 'upcoming' | 'Permanent' | 'Archive';
+  imageURL: string;
+  setAsHero: boolean;
+};
+
+export type ProjectDetail = ProjectDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type heroSectionDetailInput = {
   header: string;
   subHeader: string;
   backGroundImageURL: string;
@@ -66,6 +82,7 @@ export type HeroSectionDetail = HeroSectionDetailInput & {
   updatedAt: Date;
   id: string;
 };
+
 export type NewsDetailInput = {
   title: string;
   body: string;

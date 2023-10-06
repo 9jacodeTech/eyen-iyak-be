@@ -4,6 +4,8 @@ import { AuthMiddlewareUsecase } from './auth-middleware';
 import { GenerateUploadURLUsecase } from './geenrate-upload-url';
 import { JWT_SECRET } from 'config';
 import { FileServiceFactory } from 'services';
+import { ProjectDataGateway } from 'data-gateway/project-data-gateway';
+import { ProjectUsecase } from './project';
 import { HeroSectionUseCase } from './hero-section';
 import { HeroSectionDataGateway } from 'data-gateway/hero-section-data-gateway';
 import { NewsUseCase } from './news';
@@ -22,6 +24,8 @@ export const generateUploadURLUsecase = new GenerateUploadURLUsecase(
   fileService
 );
 
+export const projectUsecase = new ProjectUsecase(
+  new ProjectDataGateway(fileService)
 export const heroSectionUsecase = new HeroSectionUseCase(
   new HeroSectionDataGateway(fileService)
 );

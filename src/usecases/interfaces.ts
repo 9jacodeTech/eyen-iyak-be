@@ -1,3 +1,5 @@
+import { ProjectDetail, ProjectDetailInput } from "entities";
+import { heroSectionDetail, heroSectionDetailInput } from "entities";
 import type {
   HeroSectionDetail,
   HeroSectionDetailInput,
@@ -19,6 +21,10 @@ export interface ITokenManager {
   generateToken: (secretKey: string, payload: object) => Promise<string>;
 }
 
+export interface IProjectDataGateway {
+  fetch: () => Promise<ProjectDetail[]>;
+  create: (data: ProjectDetailInput) => Promise<ProjectDetail>;
+  update: (id: string, data: ProjectDetailInput) => Promise<ProjectDetail>;
 export interface IHeroSectionDataGateway {
   fetch: () => Promise<HeroSectionDetail[]>;
   create: (data: HeroSectionDetailInput) => Promise<HeroSectionDetail>;

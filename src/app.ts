@@ -4,6 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import imagesRouter from './routes/images-routes';
 import authRouter from './routes/auth-routes';
+import projectRouter from './routes/project';
 import heroRouter from './routes/hero-routes';
 import { handleErrors } from 'utils/helpers';
 import newsRouter from './routes/news-routes';
@@ -19,6 +20,7 @@ app.get('/', (req, res) => res.send('Connected'));
 
 app.use('/api/images', imagesRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/projects', projectRouter);
 app.use('/api/hero', heroRouter);
 app.use('/api/news', newsRouter);
 
