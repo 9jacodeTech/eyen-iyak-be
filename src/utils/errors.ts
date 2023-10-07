@@ -40,3 +40,7 @@ export class HeroNotFound extends NotFound {
 export class NewsNotFound extends NotFound {
   message: 'News Not Found';
 }
+
+export class GalleryNotFound extends NotFound {
+  message: 'Gallery Not Found';
+}

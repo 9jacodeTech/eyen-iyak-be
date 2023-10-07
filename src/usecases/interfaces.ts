@@ -1,5 +1,7 @@
 import { type ProjectDetail, type ProjectDetailInput } from 'entities';
 import type {
+  GalleryDetail,
+  GalleryDetailInput,
   HeroSectionDetail,
   HeroSectionDetailInput,
   NewsDetail,
@@ -50,5 +52,12 @@ export interface IProgramDataGateway {
   fetch: () => Promise<ProgramDetail[]>;
   create: (data: ProgramDetailInput) => Promise<ProgramDetail>;
   update: (id: string, data: ProgramDetailInput) => Promise<ProgramDetail>;
+  delete: (id: string) => Promise<any>;
+}
+
+export interface IGalleryDataGateway {
+  fetch: () => Promise<GalleryDetail[]>;
+  create: (data: GalleryDetailInput) => Promise<GalleryDetail>;
+  update: (id: string, data: GalleryDetailInput) => Promise<GalleryDetail>;
   delete: (id: string) => Promise<any>;
 }

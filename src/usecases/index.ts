@@ -12,6 +12,8 @@ import { NewsUseCase } from './news';
 import { NewsDataGateway } from 'data-gateway/news-data-gateway';
 import { ProgramUsecase } from './program';
 import { ProgramDataGateway } from 'data-gateway/program-data-gateway';
+import { GalleryUsecase } from './gallery';
+import { GalleryDataGateway } from 'data-gateway/gallery-data-gateway';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -38,6 +40,10 @@ export const newsUsecase = new NewsUseCase(new NewsDataGateway(fileService));
 
 export const programUsecase = new ProgramUsecase(
   new ProgramDataGateway(fileService)
+);
+
+export const galleryUsecase = new GalleryUsecase(
+  new GalleryDataGateway(fileService)
 );
 
 export * from './interfaces';
