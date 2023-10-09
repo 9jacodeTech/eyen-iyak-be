@@ -1,10 +1,13 @@
-import { ProjectDetail, ProjectDetailInput } from "entities";
-import { heroSectionDetail, heroSectionDetailInput } from "entities";
+import { type ProjectDetail, type ProjectDetailInput } from 'entities';
 import type {
+  GalleryDetail,
+  GalleryDetailInput,
   HeroSectionDetail,
   HeroSectionDetailInput,
   NewsDetail,
   NewsDetailInput,
+  ProgramDetail,
+  ProgramDetailInput,
 } from 'entities';
 
 interface TokenData {
@@ -25,6 +28,9 @@ export interface IProjectDataGateway {
   fetch: () => Promise<ProjectDetail[]>;
   create: (data: ProjectDetailInput) => Promise<ProjectDetail>;
   update: (id: string, data: ProjectDetailInput) => Promise<ProjectDetail>;
+  delete: (id: string) => Promise<any>;
+}
+
 export interface IHeroSectionDataGateway {
   fetch: () => Promise<HeroSectionDetail[]>;
   create: (data: HeroSectionDetailInput) => Promise<HeroSectionDetail>;
@@ -34,9 +40,24 @@ export interface IHeroSectionDataGateway {
   ) => Promise<HeroSectionDetail>;
   delete: (id: string) => Promise<any>;
 }
+
 export interface INewsDataGateway {
   fetch: () => Promise<NewsDetail[]>;
   create: (data: NewsDetailInput) => Promise<NewsDetail>;
   update: (id: string, data: NewsDetailInput) => Promise<NewsDetail>;
+  delete: (id: string) => Promise<any>;
+}
+
+export interface IProgramDataGateway {
+  fetch: () => Promise<ProgramDetail[]>;
+  create: (data: ProgramDetailInput) => Promise<ProgramDetail>;
+  update: (id: string, data: ProgramDetailInput) => Promise<ProgramDetail>;
+  delete: (id: string) => Promise<any>;
+}
+
+export interface IGalleryDataGateway {
+  fetch: () => Promise<GalleryDetail[]>;
+  create: (data: GalleryDetailInput) => Promise<GalleryDetail>;
+  update: (id: string, data: GalleryDetailInput) => Promise<GalleryDetail>;
   delete: (id: string) => Promise<any>;
 }
