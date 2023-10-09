@@ -1,5 +1,6 @@
-import { type ProjectDetail, type ProjectDetailInput } from 'entities';
 import type {
+  ProjectDetail,
+  ProjectDetailInput,
   GalleryDetail,
   GalleryDetailInput,
   HeroSectionDetail,
@@ -28,9 +29,8 @@ export interface IProjectDataGateway {
   fetch: () => Promise<ProjectDetail[]>;
   create: (data: ProjectDetailInput) => Promise<ProjectDetail>;
   update: (id: string, data: ProjectDetailInput) => Promise<ProjectDetail>;
-  delete: (id: string) => Promise<any>;
+  delete: (id: string) => Promise<void>;
 }
-
 export interface IHeroSectionDataGateway {
   fetch: () => Promise<HeroSectionDetail[]>;
   create: (data: HeroSectionDetailInput) => Promise<HeroSectionDetail>;
