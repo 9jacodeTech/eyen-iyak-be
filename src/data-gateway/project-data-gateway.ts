@@ -1,7 +1,7 @@
 import { PROJECT_FILE_ENV } from 'config';
 import { type ProjectDetailInput, type ProjectDetail } from 'entities';
 import { type IFileService } from 'services/file-services/flat-file-types';
-import { type  IProjectDataGateway } from 'usecases';
+import { type IProjectDataGateway } from 'usecases';
 import { v4 as uuidv4 } from 'uuid';
 
 const fileName = PROJECT_FILE_ENV;
