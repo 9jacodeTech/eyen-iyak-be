@@ -122,3 +122,15 @@ export type GalleryDetail = GalleryDetailInput & {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type AboutDetailInput = {
+  header: string;
+  subHeader: string;
+  imageURL: string[];
+};
+
+export type AboutDetail = AboutDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};

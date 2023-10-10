@@ -14,6 +14,8 @@ import { ProgramDataGateway } from 'data-gateway/program-data-gateway';
 import { GalleryUsecase } from './gallery';
 import { GalleryDataGateway } from 'data-gateway/gallery-data-gateway';
 import { ProjectUsecase } from './project';
+import { AboutPageUsecase } from './about-page';
+import { AboutPageDataGateway } from 'data-gateway/about-page-data-gateway';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -44,6 +46,10 @@ export const programUsecase = new ProgramUsecase(
 
 export const galleryUsecase = new GalleryUsecase(
   new GalleryDataGateway(fileService)
+);
+
+export const aboutPageUsecase = new AboutPageUsecase(
+  new AboutPageDataGateway(fileService)
 );
 
 export * from './interfaces';
