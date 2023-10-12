@@ -1,5 +1,7 @@
 import type {
   ProjectDetail,
+  ProjectDetail,
+  ProjectDetailInput,
   ProjectDetailInput,
   GalleryDetail,
   GalleryDetailInput,
@@ -31,6 +33,7 @@ export interface IProjectDataGateway {
   update: (id: string, data: ProjectDetailInput) => Promise<ProjectDetail>;
   delete: (id: string) => Promise<void>;
 }
+
 export interface IHeroSectionDataGateway {
   fetch: () => Promise<HeroSectionDetail[]>;
   create: (data: HeroSectionDetailInput) => Promise<HeroSectionDetail>;
