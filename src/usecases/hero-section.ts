@@ -7,7 +7,8 @@ export class HeroSectionUseCase {
   constructor(private readonly datagateway: IHeroSectionDataGateway) {}
 
   async fetch() {
-    return this.datagateway.fetch();
+    const data = await this.datagateway.fetch();
+    return data;
   }
 
   async create(data: HeroSectionDetailInput) {

@@ -110,3 +110,15 @@ export type ProgramDetail = ProgramDetailInput & {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type GalleryDetailInput = {
+  header: string;
+  subHeader: string;
+  imageURL: string;
+};
+
+export type GalleryDetail = GalleryDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};

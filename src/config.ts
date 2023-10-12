@@ -26,3 +26,5 @@ export const HERO_SECTION_FILE_ENV =
 export const NEWS_FILE_ENV = process.env.NEWS_FILE || 'news.json';
 
 export const PROGRAM_FILE_ENV = process.env.PROGRAM_FILE || 'programs.json';
+
+export const GALLERY_FILE_ENV = process.env.GALLERY_FILE || 'galleryjson';
