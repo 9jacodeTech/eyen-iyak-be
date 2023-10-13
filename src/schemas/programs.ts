@@ -1,6 +1,5 @@
 import Joi from 'joi';
 
-
 export const programInputSchema = Joi.object({
   name: Joi.string().required(),
   description: Joi.string().required(),
