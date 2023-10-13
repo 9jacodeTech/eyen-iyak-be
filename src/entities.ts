@@ -71,15 +71,15 @@ export type ProjectDetail = ProjectDetailInput & {
 };
 
 export type HeroSectionDetailInput = {
+  page: 'home' | 'programs' | 'projects' | 'support_us';
   header: string;
   subHeader: string;
-  backGroundImageURL: string;
+  imageURL: string[];
 };
 
 export type HeroSectionDetail = HeroSectionDetailInput & {
   createdAt: Date;
   updatedAt: Date;
-  id: string;
 };
 
 export type NewsDetailInput = {

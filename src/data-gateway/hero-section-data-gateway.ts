@@ -3,7 +3,6 @@ import { type HeroSectionDetail, type HeroSectionDetailInput } from 'entities';
 import { type IFileService } from 'services/file-services/flat-file-types';
 import { type IHeroSectionDataGateway } from 'usecases';
 import { HeroNotFound } from 'utils/errors';
-import { v4 as uuidv4 } from 'uuid';
 
 export class HeroSectionDataGateway implements IHeroSectionDataGateway {
   constructor(private readonly fileService: IFileService) {}
@@ -27,7 +26,6 @@ export class HeroSectionDataGateway implements IHeroSectionDataGateway {
 
     const newHero = {
       ...data,
-      id: uuidv4(),
       createdAt: new Date(),
       updatedAt: new Date(),
     };
@@ -40,7 +38,7 @@ export class HeroSectionDataGateway implements IHeroSectionDataGateway {
   }
 
   async update(
-    id: string,
+    page: string,
     data: HeroSectionDetailInput
   ): Promise<HeroSectionDetail> {
     const fileName = HERO_SECTION_FILE_ENV;
@@ -48,7 +46,7 @@ export class HeroSectionDataGateway implements IHeroSectionDataGateway {
     const currentHeroes = await this.fetch();
 
     const indexToUpdate = currentHeroes.findIndex(
-      (currentHero) => currentHero.id === id
+      (currentHero) => currentHero.page === page
     );
 
     if (indexToUpdate < 0) {
@@ -69,13 +67,13 @@ export class HeroSectionDataGateway implements IHeroSectionDataGateway {
     return heroUpdateData;
   }
 
-  async delete(id: string): Promise<any> {
+  async delete(page: string): Promise<any> {
     const fileName = HERO_SECTION_FILE_ENV;
 
     const currentHeroes = await this.fetch();
 
     const indexToDelete = currentHeroes.findIndex(
-      (currentHero) => currentHero.id === id
+      (currentHero) => currentHero.page === page
     );
 
     if (indexToDelete < 0) {

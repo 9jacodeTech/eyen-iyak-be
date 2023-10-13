@@ -1,4 +1,4 @@
-import { type HeroSectionDetailInput } from 'entities';
+import type { HeroSectionDetail, HeroSectionDetailInput } from 'entities';
 import { type IHeroSectionDataGateway } from './interfaces';
 import { validateData } from 'utils/helpers';
 import { heroSectionInputSchema } from 'schemas/heroSection,';
@@ -11,9 +11,24 @@ export class HeroSectionUseCase {
     return data;
   }
 
-  async create(data: HeroSectionDetailInput) {
+  async createOrUpdate(data: HeroSectionDetailInput) {
     const heroSectionData = validateData(heroSectionInputSchema, data);
-    return await this.datagateway.create(heroSectionData);
+
+    const heroSections = await this.datagateway.fetch();
+
+    const currentHero = heroSections.find((hero) => hero.page === data.page);
+
+    let updateValues: HeroSectionDetail;
+    if (!currentHero) {
+      updateValues = await this.datagateway.create(heroSectionData);
+      return data;
+    } else {
+      updateValues = await this.datagateway.update(
+        heroSectionData.page,
+        heroSectionData
+      );
+    }
+    return updateValues;
   }
 
   async update(idToUpdate: string, data: HeroSectionDetailInput) {
