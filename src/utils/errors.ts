@@ -44,3 +44,7 @@ export class NewsNotFound extends NotFound {
 export class GalleryNotFound extends NotFound {
   message: 'Gallery Not Found';
 }
+
+export class AboutPageNotFound extends NotFound {
+  message: 'About Page Not Found';
+}
