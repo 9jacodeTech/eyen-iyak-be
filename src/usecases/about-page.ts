@@ -1,5 +1,5 @@
-import { AboutDetailInput } from 'entities';
-import { IAboutPageDataGateway } from './interfaces';
+import { type AboutDetailInput } from 'entities';
+import { type IAboutPageDataGateway } from './interfaces';
 import { validateData } from 'utils/helpers';
 import { aboutPageInputSchema } from 'schemas/aboutPage';
 

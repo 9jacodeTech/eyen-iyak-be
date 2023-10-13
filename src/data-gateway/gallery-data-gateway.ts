@@ -1,7 +1,7 @@
 import { GALLERY_FILE_ENV } from 'config';
 import { type GalleryDetail, type GalleryDetailInput } from 'entities';
 import { type IFileService } from 'services/file-services/flat-file-types';
-import { IGalleryDataGateway } from 'usecases';
+import { type IGalleryDataGateway } from 'usecases';
 import { GalleryNotFound } from 'utils/errors';
 import { v4 as uuidv4 } from 'uuid';
 

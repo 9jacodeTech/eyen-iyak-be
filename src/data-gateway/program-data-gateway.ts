@@ -1,7 +1,7 @@
 import { PROGRAM_FILE_ENV } from 'config';
 import { type ProgramDetail, type ProgramDetailInput } from 'entities';
 import { type IFileService } from 'services/file-services/flat-file-types';
-import { IProgramDataGateway } from 'usecases';
+import { type IProgramDataGateway } from 'usecases';
 import { v4 as uuidv4 } from 'uuid';
 
 const fileName = PROGRAM_FILE_ENV;
@@ -48,8 +48,9 @@ export class ProgramDataGateway implements IProgramDataGateway {
     const update = {
       ...currentProgram[indexToUpdate],
       ...data,
+      updatedAt: new Date(),
     };
-    (update.updatedAt = new Date()), (currentProgram[indexToUpdate] = update);
+    currentProgram[indexToUpdate] = update;
 
     const programDataString = JSON.stringify(currentProgram);
     await this.fileService.write(fileName, programDataString);

@@ -1,7 +1,7 @@
 import { ABOUT_PAGE_FILE_ENV } from 'config';
 import { type AboutDetail, type AboutDetailInput } from 'entities';
 import { type IFileService } from 'services/file-services/flat-file-types';
-import { IAboutPageDataGateway } from 'usecases';
+import { type IAboutPageDataGateway } from 'usecases';
 import { AboutPageNotFound } from 'utils/errors';
 import { v4 as uuidv4 } from 'uuid';
 

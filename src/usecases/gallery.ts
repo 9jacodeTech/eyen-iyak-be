@@ -1,5 +1,5 @@
-import { GalleryDetailInput } from 'entities';
-import { IGalleryDataGateway } from './interfaces';
+import { type GalleryDetailInput } from 'entities';
+import { type IGalleryDataGateway } from './interfaces';
 import { validateData } from 'utils/helpers';
 import { galleryInputSchema } from 'schemas/gallery';
 

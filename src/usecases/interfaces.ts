@@ -1,7 +1,5 @@
 import type {
   ProjectDetail,
-  ProjectDetail,
-  ProjectDetailInput,
   ProjectDetailInput,
   GalleryDetail,
   GalleryDetailInput,
