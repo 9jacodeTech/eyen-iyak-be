@@ -3,7 +3,7 @@ import Joi from 'joi';
 export const heroSectionInputSchema = Joi.object({
   page: Joi.string()
     .lowercase()
-    .valid('home', 'programs', 'projects', 'support_us')
+    .valid('home', 'programs', 'projects', 'support_us', 'about', 'gallery')
     .required(),
   header: Joi.string().required(),
   subHeader: Joi.string().required(),
