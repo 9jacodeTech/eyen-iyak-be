@@ -2,10 +2,10 @@ import { type Response } from 'express';
 import { type AuthRequest } from 'types';
 import { heroSectionUsecase } from 'usecases';
 
-export const createHero = async (req: AuthRequest, res: Response) => {
+export const createOrUpdateHero = async (req: AuthRequest, res: Response) => {
   const input = req.body;
 
-  const data = await heroSectionUsecase.create(input);
+  const data = await heroSectionUsecase.createOrUpdate(input);
 
   return res.status(201).json({
     message: 'Hero Created Successfully',

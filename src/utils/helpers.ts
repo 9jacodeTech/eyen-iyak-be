@@ -5,6 +5,7 @@ import { type ObjectSchema } from 'joi';
 export function validateData<T>(schema: ObjectSchema, data: T) {
   const { value, error } = schema.validate(data, {
     abortEarly: false,
+    allowUnknown: true,
     errors: { wrap: { label: false } },
   });
 

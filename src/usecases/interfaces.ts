@@ -38,7 +38,7 @@ export interface IHeroSectionDataGateway {
   fetch: () => Promise<HeroSectionDetail[]>;
   create: (data: HeroSectionDetailInput) => Promise<HeroSectionDetail>;
   update: (
-    id: string,
+    page: string,
     data: HeroSectionDetailInput
   ) => Promise<HeroSectionDetail>;
   delete: (id: string) => Promise<any>;
