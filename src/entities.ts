@@ -58,7 +58,7 @@ export type AboutPageContent = {
 export type ProjectDetailInput = {
   name: string;
   date: Date;
-  description: object[];
+  sections: object[];
   status: 'current' | 'upcoming' | 'permanent' | 'archive';
   coverImageUrl: string;
   setAsHero: boolean;

@@ -3,7 +3,7 @@ import Joi from 'joi';
 export const projectInputSchema = Joi.object({
   name: Joi.string().required(),
   date: Joi.date().required(),
-  description: Joi.array()
+  sections: Joi.array()
     .items(
       Joi.object({
         title: Joi.string().optional(),
