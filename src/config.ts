@@ -39,3 +39,5 @@ export const PROGRAM_FILE_ENV = process.env.PROGRAM_FILE || 'programs.json';
 export const GALLERY_FILE_ENV = process.env.GALLERY_FILE || 'gallery.json';
 
 export const ABOUT_PAGE_FILE_ENV = process.env.ABOUT_PAGE_FILE || 'about.json';
+
+export const EVENTS_FILE_ENV = process.env.EVENTS_FILE || 'events.json';
