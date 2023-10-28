@@ -30,7 +30,6 @@ export class ProgramDataGateway implements IProgramDataGateway {
       updatedAt: new Date(),
     };
 
-    console.log(newProgram);
     currentProgram.push(newProgram);
 
     const programDataString = JSON.stringify(currentProgram);
@@ -46,7 +45,7 @@ export class ProgramDataGateway implements IProgramDataGateway {
     const currentProgram = await this.fetch();
 
     const indexToUpdate = currentProgram.findIndex(
-      (item) => item.program == program
+      (item) => item.program === program
     );
 
     if (indexToUpdate < 0) {

@@ -16,7 +16,7 @@ export class ProgramUsecase {
     const programs = await this.dataGateway.fetch();
 
     const currentProgram = programs.find(
-      (item) => item.program == programData.program
+      (item) => item.program === programData.program
     );
 
     if (!currentProgram) {
