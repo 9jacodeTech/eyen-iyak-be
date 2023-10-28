@@ -97,12 +97,10 @@ export type NewsDetail = NewsDetailInput & {
 };
 
 export type ProgramDetailInput = {
-  name: string;
-  description: string;
-  buttonLabel: string;
-  registrationLink: string;
-  donationLink: string;
-  imageURL: string;
+  program: 'artist development' | 'cultural regeneration' | 'education';
+  writeUp: object[];
+  section: object[];
+  coverImageURL: string;
 };
 
 export type ProgramDetail = ProgramDetailInput & {
