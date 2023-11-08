@@ -17,6 +17,8 @@ import { ProjectUsecase } from './project';
 import { AboutPageUsecase } from './about-page';
 import { AboutPageDataGateway } from 'data-gateway/about-page-data-gateway';
 import { S3Service } from 'services/file-services/s3-service';
+import { PartnersUseCase } from './partner';
+import { PartnersDataGateway } from 'data-gateway/partners-data-gateway';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -51,6 +53,10 @@ export const galleryUsecase = new GalleryUsecase(
 
 export const aboutPageUsecase = new AboutPageUsecase(
   new AboutPageDataGateway(fileService)
+);
+
+export const partnerUsecase = new PartnersUseCase(
+  new PartnersDataGateway(fileService)
 );
 
 export * from './interfaces';
