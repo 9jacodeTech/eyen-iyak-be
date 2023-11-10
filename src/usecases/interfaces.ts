@@ -13,6 +13,8 @@ import type {
   AboutDetailInput,
   PartnerDetail,
   PartnerDetailInput,
+  AboutContent,
+  AboutContentInput,
 } from 'entities';
 
 interface TokenData {
@@ -79,4 +81,9 @@ export interface IPartnersDataGateway {
   create: (data: PartnerDetailInput) => Promise<PartnerDetail>;
   update: (id: string, data: PartnerDetailInput) => Promise<PartnerDetail>;
   delete: (id: string) => Promise<any>;
+}
+
+export interface IAboutContentDataGateway {
+  fetch: () => Promise<AboutContent>;
+  create: (data: AboutContentInput) => Promise<AboutContent>;
 }
