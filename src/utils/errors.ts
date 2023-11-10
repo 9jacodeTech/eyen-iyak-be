@@ -52,3 +52,7 @@ export class AboutPageNotFound extends NotFound {
 export class PartnerNotFound extends NotFound {
   message: 'Partner Not Found';
 }
+
+export class TeamMemberNotFound extends NotFound {
+  message: 'Team Member Not Found';
+}
