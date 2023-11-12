@@ -19,6 +19,7 @@ import type {
   TeamMemberDetailInput,
   BrandStoryDetail,
   BrandStoryDetailInput,
+  SearchResultItem,
 } from 'entities';
 
 interface TokenData {
@@ -80,6 +81,7 @@ export interface IAboutPageDataGateway {
   delete: (id: string) => Promise<any>;
 }
 
+
 export interface IPartnersDataGateway {
   fetch: () => Promise<PartnerDetail[]>;
   create: (data: PartnerDetailInput) => Promise<PartnerDetail>;
@@ -105,4 +107,8 @@ export interface ITeamMembersDataGateway {
 export interface IBrandStoryDataGateway {
   fetch: () => Promise<BrandStoryDetail>;
   create: (data: BrandStoryDetailInput) => Promise<BrandStoryDetail>;
+}
+
+export interface ISearchDataGateway {
+  fetch: (data: SearchResultItem) => Promise<any[]>;
 }

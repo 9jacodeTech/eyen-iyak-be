@@ -60,7 +60,7 @@ export type ProjectDetailInput = {
   date: Date;
   sections: object[];
   status: 'current' | 'upcoming' | 'permanent' | 'archive';
-  coverImageUrl: string;
+  coverImageURL: string;
   setAsHero: boolean;
 };
 
@@ -184,4 +184,15 @@ export type BrandStoryDetailInput = {
 export type BrandStoryDetail = BrandStoryDetailInput & {
   createdAt: Date;
   updatedAt: Date;
+};
+
+export type SearchDetailInput = {
+  searchTerm: string;
+  category: string;
+};
+
+export type SearchResultItem = {
+  title: string;
+  id: string;
+  category: 'news' | 'events' | 'program' | 'project';
 };
