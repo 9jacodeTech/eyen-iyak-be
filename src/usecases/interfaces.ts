@@ -11,6 +11,7 @@ import type {
   ProgramDetailInput,
   AboutDetail,
   AboutDetailInput,
+  SearchResultItem,
 } from 'entities';
 
 interface TokenData {
@@ -70,4 +71,8 @@ export interface IAboutPageDataGateway {
   create: (data: AboutDetailInput) => Promise<AboutDetail>;
   update: (id: string, data: AboutDetailInput) => Promise<AboutDetail>;
   delete: (id: string) => Promise<any>;
+}
+
+export interface ISearchDataGateway {
+  fetch: (data: SearchResultItem) => Promise<any[]>;
 }
