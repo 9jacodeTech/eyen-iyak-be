@@ -17,6 +17,8 @@ import type {
   AboutContentInput,
   TeamMemberDetail,
   TeamMemberDetailInput,
+  BrandStoryDetail,
+  BrandStoryDetailInput,
 } from 'entities';
 
 interface TokenData {
@@ -98,4 +100,9 @@ export interface ITeamMembersDataGateway {
     data: TeamMemberDetailInput
   ) => Promise<TeamMemberDetail>;
   delete: (id: string) => Promise<any>;
+}
+
+export interface IBrandStoryDataGateway {
+  fetch: () => Promise<BrandStoryDetail>;
+  create: (data: BrandStoryDetailInput) => Promise<BrandStoryDetail>;
 }
