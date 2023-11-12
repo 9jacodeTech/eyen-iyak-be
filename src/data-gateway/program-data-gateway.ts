@@ -39,13 +39,13 @@ export class ProgramDataGateway implements IProgramDataGateway {
   }
 
   async update(
-    program: string,
+    category: string,
     data: ProgramDetailInput
   ): Promise<ProgramDetail> {
     const currentProgram = await this.fetch();
 
     const indexToUpdate = currentProgram.findIndex(
-      (item) => item.program === program
+      (item) => item.category === category
     );
 
     if (indexToUpdate < 0) {

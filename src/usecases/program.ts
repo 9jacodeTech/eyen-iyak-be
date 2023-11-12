@@ -16,13 +16,13 @@ export class ProgramUsecase {
     const programs = await this.dataGateway.fetch();
 
     const currentProgram = programs.find(
-      (item) => item.program === programData.program
+      (item) => item.category === programData.category
     );
 
     if (!currentProgram) {
       return await this.dataGateway.create(programData);
     } else {
-      return await this.dataGateway.update(programData.program, programData);
+      return await this.dataGateway.update(programData.category, programData);
     }
   }
 

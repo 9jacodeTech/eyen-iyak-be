@@ -1,17 +1,17 @@
 import Joi from 'joi';
 
 export const programInputSchema = Joi.object({
-  program: Joi.string()
+  category: Joi.string()
     .lowercase()
-    .valid('artist development', 'cultural regeneration', 'education'),
+    .valid('artist_development', 'cultural_regeneration'),
   writeUp: Joi.array().items(
     Joi.object({
       title: Joi.string().optional(),
       body: Joi.string().optional(),
-      imageURL: Joi.array().items(Joi.string()).optional(),
+      imageURL: Joi.string().required(),
     })
   ),
-  sections: Joi.array()
+  subPrograms: Joi.array()
     .items(
       Joi.object({
         title: Joi.string().optional().allow(''),
@@ -22,7 +22,7 @@ export const programInputSchema = Joi.object({
         donationLink: Joi.string().optional(),
       }).or('title', 'body', 'imageURL')
     )
-    .min(1)
     .optional(),
   coverImageURL: Joi.string().required(),
+  background: Joi.string().lowercase().valid('white', 'gray').required(),
 });

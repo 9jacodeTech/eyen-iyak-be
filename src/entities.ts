@@ -97,10 +97,11 @@ export type NewsDetail = NewsDetailInput & {
 };
 
 export type ProgramDetailInput = {
-  program: 'artist development' | 'cultural regeneration' | 'education';
+  category: 'artist development' | 'cultural regeneration';
   writeUp: object[];
-  section: object[];
+  subPrograms: object[];
   coverImageURL: string;
+  background: 'white' | 'gray';
 };
 
 export type ProgramDetail = ProgramDetailInput & {
