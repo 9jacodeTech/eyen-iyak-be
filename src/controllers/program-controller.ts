@@ -10,25 +10,16 @@ export const fetchPrograms = async (req: AuthRequest, res: Response) => {
   });
 };
 
-export const createProgram = async (req: AuthRequest, res: Response) => {
+export const createOrUpdateProgram = async (
+  req: AuthRequest,
+  res: Response
+) => {
   const input = req.body;
 
-  const data = await programUsecase.create(input);
+  const data = await programUsecase.createOrUpdate(input);
 
   return res.status(201).json({
     message: 'Program was created successfully',
-    data,
-  });
-};
-
-export const updateProgram = async (req: AuthRequest, res: Response) => {
-  const input = req.body;
-  const idToUpdate = req.params.id;
-
-  const data = await programUsecase.update(idToUpdate, input);
-
-  return res.status(200).json({
-    message: 'Program was updated successfully',
     data,
   });
 };
@@ -40,5 +31,15 @@ export const deleteProgram = async (req: AuthRequest, res: Response) => {
 
   return res.status(200).json({
     message: 'Program was deleted successfully',
+  });
+};
+
+export const fetchSingleProgram = async (req: AuthRequest, res: Response) => {
+  const idToFetch = req.params.id;
+
+  const data = await programUsecase.fetchById(idToFetch);
+
+  return res.status(200).json({
+    data,
   });
 };
