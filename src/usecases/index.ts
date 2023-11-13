@@ -19,6 +19,7 @@ import { AboutPageDataGateway } from 'data-gateway/about-page-data-gateway';
 import { S3Service } from 'services/file-services/s3-service';
 import { PartnersUseCase } from './partner';
 import { PartnersDataGateway } from 'data-gateway/partners-data-gateway';
+import { SearchUsecase } from './search';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -57,6 +58,12 @@ export const aboutPageUsecase = new AboutPageUsecase(
 
 export const partnerUsecase = new PartnersUseCase(
   new PartnersDataGateway(fileService)
+  };
+  
+export const searchUsecase = new SearchUsecase(
+  new NewsDataGateway(fileService),
+  new ProgramDataGateway(fileService),
+  new ProjectDataGateway(fileService)
 );
 
 export * from './interfaces';

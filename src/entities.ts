@@ -60,7 +60,7 @@ export type ProjectDetailInput = {
   date: Date;
   sections: object[];
   status: 'current' | 'upcoming' | 'permanent' | 'archive';
-  coverImageUrl: string;
+  coverImageURL: string;
   setAsHero: boolean;
 };
 
@@ -97,12 +97,11 @@ export type NewsDetail = NewsDetailInput & {
 };
 
 export type ProgramDetailInput = {
-  name: string;
-  description: string;
-  buttonLabel: string;
-  registrationLink: string;
-  donationLink: string;
-  imageURL: string;
+  category: 'artist_development' | 'cultural_regeneration';
+  writeUp: object[];
+  subPrograms: object[];
+  coverImageURL: string;
+  background: 'white' | 'gray';
 };
 
 export type ProgramDetail = ProgramDetailInput & {
@@ -135,6 +134,7 @@ export type AboutDetail = AboutDetailInput & {
   updatedAt: Date;
 };
 
+
 export type PartnerDetailInput = {
   category: 'main' | 'art' | 'other';
   partnerWebAddress: string;
@@ -142,9 +142,19 @@ export type PartnerDetailInput = {
   imageURL: string;
 };
 
-
 export type PartnerDetail = PartnerDetailInput & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
+};
+
+export type SearchDetailInput = {
+  searchTerm: string;
+  category: string;
+};
+
+export type SearchResultItem = {
+  title: string;
+  id: string;
+  category: 'news' | 'events' | 'program' | 'project';
 };
