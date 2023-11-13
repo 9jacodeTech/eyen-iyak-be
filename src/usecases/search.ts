@@ -63,7 +63,7 @@ export class SearchUsecase {
     return news.map((item) => ({
       id: item.id,
       category: 'project',
-      title: item.name,
+      title: ' ',
     }));
   }
 }
