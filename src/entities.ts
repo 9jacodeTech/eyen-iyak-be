@@ -134,7 +134,6 @@ export type AboutDetail = AboutDetailInput & {
   updatedAt: Date;
 };
 
-
 export type PartnerDetailInput = {
   category: 'main' | 'art' | 'other';
   partnerWebAddress: string;
