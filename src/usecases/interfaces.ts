@@ -76,13 +76,12 @@ export interface IAboutPageDataGateway {
   delete: (id: string) => Promise<any>;
 }
 
-
 export interface IPartnersDataGateway {
   fetch: () => Promise<PartnerDetail[]>;
   create: (data: PartnerDetailInput) => Promise<PartnerDetail>;
   update: (id: string, data: PartnerDetailInput) => Promise<PartnerDetail>;
   delete: (id: string) => Promise<any>;
-};
+}
 
 export interface ISearchDataGateway {
   fetch: (data: SearchResultItem) => Promise<any[]>;
