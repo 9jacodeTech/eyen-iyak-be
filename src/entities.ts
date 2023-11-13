@@ -142,6 +142,7 @@ export type PartnerDetailInput = {
   imageURL: string;
 };
 
+
 export type PartnerDetail = PartnerDetailInput & {
   id: string;
   createdAt: Date;
