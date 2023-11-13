@@ -11,6 +11,7 @@ import newsRouter from './routes/news-routes';
 import programRouter from './routes/program-routes';
 import galleryRouter from './routes/gallery-routes';
 import aboutPageRouter from './routes/about-page-routes';
+import partnerRouter from './routes/partner-routes';
 import searchRouter from './routes/search-routes';
 
 import { PORT } from 'config';
@@ -30,6 +31,7 @@ app.use('/api/news', newsRouter);
 app.use('/api/programs', programRouter);
 app.use('/api/gallery', galleryRouter);
 app.use('/api/about-page', aboutPageRouter);
+app.use('/api/partners', partnerRouter);
 app.use('/api/search', searchRouter);
 
 app.use((err, req, res, next) => {

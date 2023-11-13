@@ -134,6 +134,19 @@ export type AboutDetail = AboutDetailInput & {
   updatedAt: Date;
 };
 
+export type PartnerDetailInput = {
+  category: 'main' | 'art' | 'other';
+  partnerWebAddress: string;
+  subText: string;
+  imageURL: string;
+};
+
+export type PartnerDetail = PartnerDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
 export type SearchDetailInput = {
   searchTerm: string;
   category: string;
