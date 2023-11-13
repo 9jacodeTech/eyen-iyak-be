@@ -58,7 +58,7 @@ export const aboutPageUsecase = new AboutPageUsecase(
 
 export const partnerUsecase = new PartnersUseCase(
   new PartnersDataGateway(fileService)
-  };
+);
   
 export const searchUsecase = new SearchUsecase(
   new NewsDataGateway(fileService),
