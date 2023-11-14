@@ -147,6 +147,15 @@ export type PartnerDetail = PartnerDetailInput & {
   updatedAt: Date;
 };
 
+export type AboutContentInput = {
+  sections: object[];
+};
+
+export type AboutContent = AboutContentInput & {
+  createdAt: Date;
+  updatedAt: Date;
+};
+
 export type SearchDetailInput = {
   searchTerm: string;
   category: string;
