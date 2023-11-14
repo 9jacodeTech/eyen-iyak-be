@@ -17,4 +17,5 @@ export const projectInputSchema = Joi.object({
     .lowercase()
     .valid('current', 'upcoming', 'permanent', 'archive'),
   coverImageURL: Joi.string().required(),
+  setAsHero: Joi.boolean().default(false),
 });

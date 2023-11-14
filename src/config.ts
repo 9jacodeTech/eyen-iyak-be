@@ -44,3 +44,5 @@ export const PARTNERS_FILE_ENV = process.env.PARTNERS_FILE || 'partners.json';
 
 export const ABOUT_CONTENT_FILE_ENV =
   process.env.ABOUT_CONTENT_FILE || 'about-content.json';
+
+export const EVENTS_FILE_ENV = process.env.EVENTS_FILE || 'events.json';
