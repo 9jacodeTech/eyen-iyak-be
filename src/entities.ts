@@ -97,12 +97,11 @@ export type NewsDetail = NewsDetailInput & {
 };
 
 export type ProgramDetailInput = {
-  name: string;
-  description: string;
-  buttonLabel: string;
-  registrationLink: string;
-  donationLink: string;
-  imageURL: string;
+  category: 'artist_development' | 'cultural_regeneration';
+  writeUp: object[];
+  subPrograms: object[];
+  coverImageURL: string;
+  background: 'white' | 'gray';
 };
 
 export type ProgramDetail = ProgramDetailInput & {

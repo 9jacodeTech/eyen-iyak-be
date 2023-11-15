@@ -1,15 +1,15 @@
 import {
-  createProgram,
+  createOrUpdateProgram,
   deleteProgram,
   fetchPrograms,
-  updateProgram,
+  fetchSingleProgram,
 } from 'controllers/program-controller';
 import { Router } from 'express';
 
 const router = Router();
 
-router.route('/').get(fetchPrograms).post(createProgram);
+router.route('/').get(fetchPrograms).post(createOrUpdateProgram);
 
-router.route('/:id').put(updateProgram).delete(deleteProgram);
+router.route('/:id').delete(deleteProgram).get(fetchSingleProgram);
 
 export default router;

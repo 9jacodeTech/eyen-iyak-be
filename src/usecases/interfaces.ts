@@ -65,6 +65,7 @@ export interface IProgramDataGateway {
   create: (data: ProgramDetailInput) => Promise<ProgramDetail>;
   update: (id: string, data: ProgramDetailInput) => Promise<ProgramDetail>;
   delete: (id: string) => Promise<any>;
+  fetchById: (id: string) => Promise<ProgramDetail>;
 }
 
 export interface IGalleryDataGateway {
@@ -80,7 +81,6 @@ export interface IAboutPageDataGateway {
   update: (id: string, data: AboutDetailInput) => Promise<AboutDetail>;
   delete: (id: string) => Promise<any>;
 }
-
 
 export interface IPartnersDataGateway {
   fetch: () => Promise<PartnerDetail[]>;

@@ -36,6 +36,7 @@ app.use('/api/gallery', galleryRouter);
 app.use('/api/about-page', aboutPageRouter);
 app.use('/api/partners', partnerRouter);
 app.use('/api/about', aboutContentRouter, teamMembersRouter, brandStoryRouter);
+app.use('/api/about', aboutContentRouter);
 app.use('/api/search', searchRouter);
 
 app.use((err, req, res, next) => {
