@@ -99,9 +99,6 @@ export type NewsDetail = NewsDetailInput & {
 export type ProgramDetailInput = {
   category: 'artist_development' | 'cultural_regeneration';
   writeUp: object[];
-  subPrograms: object[];
-  coverImageURL: string;
-  background: 'white' | 'gray';
 };
 
 export type ProgramDetail = ProgramDetailInput & {
