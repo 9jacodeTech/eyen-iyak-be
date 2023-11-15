@@ -23,6 +23,7 @@ import { AboutContentUseCase } from './about-content';
 import { AboutContentDataGateway } from 'data-gateway/about-content-data-gateway';
 import { TeamMembersUseCase } from './team-members';
 import { TeamMembersDataGateway } from 'data-gateway/team-member-data-gateway';
+import { SearchUsecase } from './search';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -69,6 +70,12 @@ export const aboutContentUsecase = new AboutContentUseCase(
 
 export const teamMembersUsecase = new TeamMembersUseCase(
   new TeamMembersDataGateway(fileService)
+);
+
+export const searchUsecase = new SearchUsecase(
+  new NewsDataGateway(fileService),
+  new ProgramDataGateway(fileService),
+  new ProjectDataGateway(fileService)
 );
 
 export * from './interfaces';

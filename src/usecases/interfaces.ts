@@ -17,6 +17,7 @@ import type {
   AboutContentInput,
   TeamMemberDetail,
   TeamMemberDetailInput,
+  SearchResultItem,
 } from 'entities';
 
 interface TokenData {
@@ -62,6 +63,7 @@ export interface IProgramDataGateway {
   create: (data: ProgramDetailInput) => Promise<ProgramDetail>;
   update: (id: string, data: ProgramDetailInput) => Promise<ProgramDetail>;
   delete: (id: string) => Promise<any>;
+  fetchById: (id: string) => Promise<ProgramDetail>;
 }
 
 export interface IGalleryDataGateway {
@@ -98,4 +100,8 @@ export interface ITeamMembersDataGateway {
     data: TeamMemberDetailInput
   ) => Promise<TeamMemberDetail>;
   delete: (id: string) => Promise<any>;
+}
+
+export interface ISearchDataGateway {
+  fetch: (data: SearchResultItem) => Promise<any[]>;
 }

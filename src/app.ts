@@ -14,6 +14,7 @@ import aboutPageRouter from './routes/about-page-routes';
 import partnerRouter from './routes/partner-routes';
 import aboutContentRouter from './routes/about-content-routes';
 import teamMembersRouter from './routes/team-members-routes';
+import searchRouter from './routes/search-routes';
 
 import { PORT } from 'config';
 
@@ -34,6 +35,8 @@ app.use('/api/gallery', galleryRouter);
 app.use('/api/about-page', aboutPageRouter);
 app.use('/api/partners', partnerRouter);
 app.use('/api/about', aboutContentRouter, teamMembersRouter);
+app.use('/api/about', aboutContentRouter);
+app.use('/api/search', searchRouter);
 
 app.use((err, req, res, next) => {
   return handleErrors(res, err);

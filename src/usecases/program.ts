@@ -10,19 +10,27 @@ export class ProgramUsecase {
     return await this.dataGateway.fetch();
   }
 
-  async create(data: ProgramDetailInput) {
+  async createOrUpdate(data: ProgramDetailInput) {
     const programData = validateData(programInputSchema, data);
 
-    return await this.dataGateway.create(programData);
-  }
+    const programs = await this.dataGateway.fetch();
 
-  async update(idToUpdate: string, data: ProgramDetailInput) {
-    const programData = validateData(programInputSchema, data);
+    const currentProgram = programs.find(
+      (item) => item.category === programData.category
+    );
 
-    return await this.dataGateway.update(idToUpdate, programData);
+    if (!currentProgram) {
+      return await this.dataGateway.create(programData);
+    } else {
+      return await this.dataGateway.update(programData.category, programData);
+    }
   }
 
   async delete(idToDelete: string) {
     return await this.dataGateway.delete(idToDelete);
+  }
+
+  async fetchById(idToFetch: string) {
+    return await this.dataGateway.fetchById(idToFetch);
   }
 }
