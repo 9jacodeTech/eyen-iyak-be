@@ -151,10 +151,7 @@ export type AboutContentInput = {
   sections: object[];
 };
 
-export type AboutContent = AboutContentInput & {
-  createdAt: Date;
-  updatedAt: Date;
-};
+export type AboutContent = AboutContentInput;
 
 export type SearchDetailInput = {
   searchTerm: string;

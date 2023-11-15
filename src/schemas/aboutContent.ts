@@ -7,7 +7,7 @@ export const aboutContentSchema = Joi.object({
       subtitle: Joi.string().optional(),
       paragraph: Joi.string().optional(),
       align: Joi.string().optional(),
-      imageURL: Joi.string().optional(),
+      imageURL: Joi.array().items(Joi.string()).default([]).optional(),
     }).or('title', 'subtitle', 'paragraph', 'imageURL')
   ),
 });
