@@ -153,6 +153,23 @@ export type AboutContentInput = {
 
 export type AboutContent = AboutContentInput;
 
+export type TeamMemberDetailInput = {
+  department:
+    | 'executive'
+    | 'board_of_directors'
+    | 'council_governors'
+    | 'operations';
+  imageURL: string;
+  name: string;
+  role: string;
+};
+
+export type TeamMemberDetail = TeamMemberDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
 export type SearchDetailInput = {
   searchTerm: string;
   category: string;

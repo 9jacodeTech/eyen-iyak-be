@@ -15,6 +15,8 @@ import type {
   PartnerDetailInput,
   AboutContent,
   AboutContentInput,
+  TeamMemberDetail,
+  TeamMemberDetailInput,
   SearchResultItem,
 } from 'entities';
 
@@ -88,6 +90,16 @@ export interface IPartnersDataGateway {
 export interface IAboutContentDataGateway {
   fetch: () => Promise<AboutContent>;
   create: (data: AboutContentInput) => Promise<AboutContent>;
+}
+
+export interface ITeamMembersDataGateway {
+  fetch: () => Promise<TeamMemberDetail[]>;
+  create: (data: TeamMemberDetailInput) => Promise<TeamMemberDetail>;
+  update: (
+    id: string,
+    data: TeamMemberDetailInput
+  ) => Promise<TeamMemberDetail>;
+  delete: (id: string) => Promise<any>;
 }
 
 export interface ISearchDataGateway {
