@@ -99,9 +99,6 @@ export type NewsDetail = NewsDetailInput & {
 export type ProgramDetailInput = {
   category: 'artist_development' | 'cultural_regeneration';
   writeUp: object[];
-  subPrograms: object[];
-  coverImageURL: string;
-  background: 'white' | 'gray';
 };
 
 export type ProgramDetail = ProgramDetailInput & {
@@ -151,7 +148,21 @@ export type AboutContentInput = {
   sections: object[];
 };
 
-export type AboutContent = AboutContentInput & {
+export type AboutContent = AboutContentInput;
+
+export type TeamMemberDetailInput = {
+  department:
+    | 'executive'
+    | 'board_of_directors'
+    | 'council_governors'
+    | 'operations';
+  imageURL: string;
+  name: string;
+  role: string;
+};
+
+export type TeamMemberDetail = TeamMemberDetailInput & {
+  id: string;
   createdAt: Date;
   updatedAt: Date;
 };
