@@ -167,6 +167,18 @@ export type TeamMemberDetail = TeamMemberDetailInput & {
   updatedAt: Date;
 };
 
+export type BrandStoryDetailInput = {
+  title: string;
+  subTitle: string;
+  content: string;
+  imageURL: string;
+};
+
+export type BrandStoryDetail = BrandStoryDetailInput & {
+  createdAt: Date;
+  updatedAt: Date;
+};
+
 export type SearchDetailInput = {
   searchTerm: string;
   category: string;
