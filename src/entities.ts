@@ -133,7 +133,7 @@ export type AboutDetail = AboutDetailInput & {
 
 export type PartnerDetailInput = {
   category: 'main' | 'art' | 'other';
-  partnerWebAddress: string;
+  partnerURL: string;
   subText: string;
   imageURL: string;
 };
