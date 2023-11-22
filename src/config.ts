@@ -52,3 +52,6 @@ export const BRAND_STORY_FILE_ENV =
   process.env.BRAND_STORY_FILE || 'brand-story.json';
 
 export const EVENTS_FILE_ENV = process.env.EVENTS_FILE || 'events.json';
+
+export const SUB_PROGRAM_FILE_ENV =
+  process.env.SUB_PROGRAM_FILE || 'sub-programs.json';
