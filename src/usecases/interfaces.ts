@@ -20,6 +20,8 @@ import type {
   BrandStoryDetail,
   BrandStoryDetailInput,
   SearchResultItem,
+  SubProgramDetail,
+  SubProgramDetailInput,
 } from 'entities';
 
 interface TokenData {
@@ -111,4 +113,15 @@ export interface IBrandStoryDataGateway {
 
 export interface ISearchDataGateway {
   fetch: (data: SearchResultItem) => Promise<any[]>;
+}
+
+export interface ISubProgramsDataGateway {
+  fetch: () => Promise<SubProgramDetail[]>;
+  create: (data: SubProgramDetailInput) => Promise<SubProgramDetail>;
+  update: (
+    id: string,
+    data: SubProgramDetailInput
+  ) => Promise<SubProgramDetail>;
+  delete: (id: string) => Promise<any>;
+  fetchById: (id: string) => Promise<SubProgramDetail>;
 }

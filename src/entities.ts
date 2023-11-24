@@ -189,3 +189,18 @@ export type SearchResultItem = {
   id: string;
   category: 'news' | 'events' | 'program' | 'project';
 };
+
+export type SubProgramDetailInput = {
+  category: 'artist_development' | 'cultural_regeneration';
+  description: string;
+  buttonLabel: string;
+  registrationLink: string;
+  donationLink: string;
+  imageURL: string;
+};
+
+export type SubProgramDetail = SubProgramDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
