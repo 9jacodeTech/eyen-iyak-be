@@ -28,15 +28,13 @@ export class BrandStoryDataGateway implements IBrandStoryDataGateway {
   }
 
   async create(data: BrandStoryDetailInput): Promise<BrandStoryDetail> {
-    const currentStory = await this.fetch();
-
     const newStory = {
       ...data,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
 
-    const storyDataString = JSON.stringify(currentStory);
+    const storyDataString = JSON.stringify(newStory);
     await this.fileService.write(fileName, storyDataString);
 
     return newStory;
