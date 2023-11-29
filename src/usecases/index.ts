@@ -28,6 +28,8 @@ import { BrandStoryDataGateway } from 'data-gateway/brand-story-data-gateway';
 import { SearchUsecase } from './search';
 import { SubProgramUsecase } from './sub-program';
 import { SubProgramsDataGateway } from 'data-gateway/sub-program-data-gateway';
+import { FooterUsecase } from './footer';
+import { FooterDataGateway } from 'data-gateway/footer-data-gateway';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -88,6 +90,10 @@ export const searchUsecase = new SearchUsecase(
 
 export const subProgramsUsecase = new SubProgramUsecase(
   new SubProgramsDataGateway(fileService)
+);
+
+export const footerUsecase = new FooterUsecase(
+  new FooterDataGateway(fileService)
 );
 
 export * from './interfaces';

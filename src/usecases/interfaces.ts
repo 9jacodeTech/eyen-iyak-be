@@ -22,6 +22,8 @@ import type {
   SearchResultItem,
   SubProgramDetail,
   SubProgramDetailInput,
+  FooterDetail,
+  FooterDetailInput,
 } from 'entities';
 
 interface TokenData {
@@ -124,4 +126,9 @@ export interface ISubProgramsDataGateway {
   ) => Promise<SubProgramDetail>;
   delete: (id: string) => Promise<any>;
   fetchById: (id: string) => Promise<SubProgramDetail>;
+}
+
+export interface IFooterDataGateway {
+  fetch: () => Promise<FooterDetail>;
+  update: (data: FooterDetailInput) => Promise<FooterDetail>;
 }

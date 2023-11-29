@@ -204,3 +204,18 @@ export type SubProgramDetail = SubProgramDetailInput & {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type FooterDetailInput = {
+  officeAddress: string;
+  emailAddress: string;
+  phoneNumber: string;
+  facebook: string;
+  instagram: string;
+  linkedIn: string;
+  twitter: string;
+};
+
+export type FooterDetail = FooterDetailInput & {
+  createdAt: Date;
+  updatedAt: Date;
+};
