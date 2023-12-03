@@ -26,6 +26,8 @@ import type {
   FooterDetailInput,
   SupportDetail,
   SupportDetailInput,
+  SupportOfferDetail,
+  SupportOfferDetailInput,
 } from 'entities';
 
 interface TokenData {
@@ -140,4 +142,9 @@ export interface ISupportDataGateway {
   create: (data: SupportDetailInput) => Promise<SupportDetail>;
   update: (id: string, data: SupportDetailInput) => Promise<SupportDetail>;
   delete: (id: string) => Promise<any>;
+}
+
+export interface ISupportOfferDataGateway {
+  fetch: () => Promise<SupportOfferDetail[]>;
+  create: (data: SupportOfferDetailInput) => Promise<SupportOfferDetail>;
 }

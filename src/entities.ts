@@ -232,3 +232,14 @@ export type SupportDetail = SupportDetailInput & {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type SupportOfferDetailInput = {
+  name: string;
+  email: string;
+  supportType: string;
+};
+
+export type SupportOfferDetail = SupportOfferDetailInput & {
+  createdAt: Date;
+  updatedAt: Date;
+};
