@@ -17,7 +17,7 @@ export const createSupportOffer = async (req: AuthRequest, res: Response) => {
 
   return res.status(201).json({
     message: data
-      ? 'Support was created successfully'
+      ? 'Support offer was created successfully'
       : 'Invalid support type',
     data,
   });
