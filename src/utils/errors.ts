@@ -60,3 +60,7 @@ export class TeamMemberNotFound extends NotFound {
 export class ProgramNotFound extends NotFound {
   message: 'Program Not Found';
 }
+
+export class SupportNotFound extends NotFound {
+  message: 'Support Not Found';
+}

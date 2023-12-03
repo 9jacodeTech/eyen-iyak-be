@@ -18,6 +18,7 @@ import brandStoryRouter from './routes/brand-story-routes';
 import searchRouter from './routes/search-routes';
 import subProgramRouter from './routes/sub-programs-routes';
 import footerRouter from './routes/footer-routes';
+import supportRouter from './routes/support-routes';
 
 import { PORT } from 'config';
 
@@ -42,6 +43,7 @@ app.use('/api/about', aboutContentRouter);
 app.use('/api/search', searchRouter);
 app.use('/api/sub-programs', subProgramRouter);
 app.use('/api/footer', footerRouter);
+app.use('/api/support', supportRouter);
 
 app.use((err, req, res, next) => {
   return handleErrors(res, err);

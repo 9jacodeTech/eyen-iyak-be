@@ -30,6 +30,8 @@ import { SubProgramUsecase } from './sub-program';
 import { SubProgramsDataGateway } from 'data-gateway/sub-program-data-gateway';
 import { FooterUsecase } from './footer';
 import { FooterDataGateway } from 'data-gateway/footer-data-gateway';
+import { SupportUseCase } from './support';
+import { SupportDataGateway } from 'data-gateway/support-data-gateway';
 
 export const loginUserUsecase = new LoginUserUsecase(tokenManager, JWT_SECRET);
 
@@ -94,6 +96,10 @@ export const subProgramsUsecase = new SubProgramUsecase(
 
 export const footerUsecase = new FooterUsecase(
   new FooterDataGateway(fileService)
+);
+
+export const supportUsecase = new SupportUseCase(
+  new SupportDataGateway(fileService)
 );
 
 export * from './interfaces';

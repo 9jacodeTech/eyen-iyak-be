@@ -219,3 +219,16 @@ export type FooterDetail = FooterDetailInput & {
   createdAt: Date;
   updatedAt: Date;
 };
+
+export type SupportDetailInput = {
+  name: string;
+  description: string;
+  registrationLink: string;
+  imageURL: string;
+};
+
+export type SupportDetail = SupportDetailInput & {
+  id: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
