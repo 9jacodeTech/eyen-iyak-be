@@ -55,3 +55,5 @@ export const EVENTS_FILE_ENV = process.env.EVENTS_FILE || 'events.json';
 
 export const SUB_PROGRAM_FILE_ENV =
   process.env.SUB_PROGRAM_FILE || 'sub-programs.json';
+
+export const FOOTER_FILE_ENV = process.env.FOOTER_FILE || 'footer.json';
