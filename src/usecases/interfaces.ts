@@ -24,6 +24,10 @@ import type {
   SubProgramDetailInput,
   FooterDetail,
   FooterDetailInput,
+  SupportDetail,
+  SupportDetailInput,
+  SupportOfferDetail,
+  SupportOfferDetailInput,
 } from 'entities';
 
 interface TokenData {
@@ -131,4 +135,16 @@ export interface ISubProgramsDataGateway {
 export interface IFooterDataGateway {
   fetch: () => Promise<FooterDetail>;
   update: (data: FooterDetailInput) => Promise<FooterDetail>;
+}
+
+export interface ISupportDataGateway {
+  fetch: () => Promise<SupportDetail[]>;
+  create: (data: SupportDetailInput) => Promise<SupportDetail>;
+  update: (id: string, data: SupportDetailInput) => Promise<SupportDetail>;
+  delete: (id: string) => Promise<any>;
+}
+
+export interface ISupportOfferDataGateway {
+  fetch: () => Promise<SupportOfferDetail[]>;
+  create: (data: SupportOfferDetailInput) => Promise<SupportOfferDetail>;
 }

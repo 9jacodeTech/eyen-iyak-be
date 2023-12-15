@@ -57,3 +57,8 @@ export const SUB_PROGRAM_FILE_ENV =
   process.env.SUB_PROGRAM_FILE || 'sub-programs.json';
 
 export const FOOTER_FILE_ENV = process.env.FOOTER_FILE || 'footer.json';
+
+export const SUPPORT_FILE_ENV = process.env.SUPPORT_FILE || 'support.json';
+
+export const SUPPORT_OFFER_FILE_ENV =
+  process.env.SUPPORT_OFFER_FILE || 'support-file.json';
