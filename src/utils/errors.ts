@@ -62,5 +62,6 @@ export class ProgramNotFound extends NotFound {
 }
 
 export class SupportNotFound extends NotFound {
+  name: 'support_not_found';
   message: 'Support Not Found';
 }
