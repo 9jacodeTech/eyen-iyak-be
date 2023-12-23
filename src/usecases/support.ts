@@ -13,33 +13,13 @@ export class SupportUseCase {
   async create(data: SupportDetailInput) {
     const supportData = validateData(supportSchema, data);
 
-    const currentSupport = await this.fetch();
-
-    const supportIndex = currentSupport.findIndex(
-      (support) => support.name === data.name
-    );
-
-    if (supportIndex < 0) {
-      return await this.dataGateway.create(supportData);
-    } else {
-      return null;
-    }
+    return await this.dataGateway.create(supportData);
   }
 
   async update(idToUpdate: string, data: SupportDetailInput) {
     const supportData = validateData(supportSchema, data);
 
-    const currentSupport = await this.fetch();
-
-    const supportIndex = currentSupport.findIndex(
-      (support) => support.name === data.name
-    );
-
-    if (supportIndex < 0) {
-      return await this.dataGateway.update(idToUpdate, supportData);
-    } else {
-      return null;
-    }
+    return await this.dataGateway.update(idToUpdate, supportData);
   }
 
   async delete(idToDelete: string) {
