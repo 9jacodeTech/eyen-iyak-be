@@ -2,6 +2,7 @@ import type { SupportDetailInput } from 'entities';
 import type { ISupportDataGateway } from './interfaces';
 import { validateData } from 'utils/helpers';
 import { supportSchema } from 'schemas/support';
+import { SupportAlreadyExist } from 'utils/errors';
 
 export class SupportUseCase {
   constructor(private readonly dataGateway: ISupportDataGateway) {}
@@ -19,11 +20,10 @@ export class SupportUseCase {
       (support) => support.name === data.name
     );
 
-    if (supportIndex < 0) {
-      return await this.dataGateway.create(supportData);
-    } else {
-      return null;
+    if (supportIndex >= 0) {
+      throw new SupportAlreadyExist();
     }
+    return await this.dataGateway.create(supportData);
   }
 
   async update(idToUpdate: string, data: SupportDetailInput) {
@@ -35,11 +35,10 @@ export class SupportUseCase {
       (support) => support.name === data.name
     );
 
-    if (supportIndex < 0) {
-      return await this.dataGateway.update(idToUpdate, supportData);
-    } else {
-      return null;
+    if (supportIndex >= 0) {
+      throw new SupportAlreadyExist();
     }
+    return await this.dataGateway.update(idToUpdate, supportData);
   }
 
   async delete(idToDelete: string) {

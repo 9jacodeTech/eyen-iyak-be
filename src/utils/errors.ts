@@ -9,6 +9,10 @@ export class Unauthorized extends CustomError {
   message = 'Not authorized';
 }
 
+export class AlreadyExist extends CustomError {
+  message = 'Already Exist';
+}
+
 export class DataValidationError extends CustomError {
   public readonly errors: object;
   constructor(error: ValidationError) {
@@ -63,4 +67,12 @@ export class ProgramNotFound extends NotFound {
 
 export class SupportNotFound extends NotFound {
   message: 'Support Not Found';
+}
+
+export class SupportAlreadyExist extends AlreadyExist {
+  message = 'Support Already Exist';
+}
+
+export class OfferTypeNotFound extends NotFound {
+  message = 'Offer Type Not Found';
 }

@@ -5,6 +5,7 @@ import type {
 } from './interfaces';
 import { validateData } from 'utils/helpers';
 import { supportOfferSchema } from 'schemas/supportOffer';
+import { OfferTypeNotFound } from 'utils/errors';
 
 export class SupportOfferUseCase {
   constructor(
@@ -26,7 +27,7 @@ export class SupportOfferUseCase {
     );
 
     if (supportIndex < 0) {
-      return null;
+      throw new OfferTypeNotFound();
     } else {
       return await this.dataGateway.create(SupportOfferData);
     }

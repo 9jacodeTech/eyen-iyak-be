@@ -16,9 +16,7 @@ export const createSupport = async (req: AuthRequest, res: Response) => {
   const data = await supportUsecase.create(input);
 
   return res.status(201).json({
-    message: data
-      ? 'Support was created successfully'
-      : 'Support already exist',
+    message: 'Support was created successfully',
     data,
   });
 };
@@ -30,9 +28,7 @@ export const updateSupport = async (req: AuthRequest, res: Response) => {
   const data = await supportUsecase.update(idToUpdate, input);
 
   return res.status(200).json({
-    message: data
-      ? 'Support was created successfully'
-      : 'Support already exist',
+    message: 'Support was created successfully',
     data,
   });
 };

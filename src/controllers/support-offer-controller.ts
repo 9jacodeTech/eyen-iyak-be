@@ -16,9 +16,7 @@ export const createSupportOffer = async (req: AuthRequest, res: Response) => {
   const data = await supportOfferUsecase.create(input);
 
   return res.status(201).json({
-    message: data
-      ? 'Support offer was created successfully'
-      : 'Invalid support type',
+    message: 'Support offer was created successfully',
     data,
   });
 };
