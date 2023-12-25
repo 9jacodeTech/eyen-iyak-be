@@ -17,7 +17,7 @@ export class SupportUseCase {
     const currentSupport = await this.fetch();
 
     const supportIndex = currentSupport.findIndex(
-      (support) => support.name === data.name
+      (support) => support.name.toLowerCase() === data.name.toLowerCase()
     );
 
     if (supportIndex >= 0) {
@@ -32,7 +32,7 @@ export class SupportUseCase {
     const currentSupport = await this.fetch();
 
     const supportIndex = currentSupport.findIndex(
-      (support) => support.name === data.name
+      (support) => support.name.toLowerCase() === data.name.toLowerCase()
     );
 
     if (supportIndex >= 0) {

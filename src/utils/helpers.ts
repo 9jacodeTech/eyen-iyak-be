@@ -1,4 +1,9 @@
-import { DataValidationError, NotFound, Unauthorized, AlreadyExist } from 'utils/errors';
+import {
+  DataValidationError,
+  NotFound,
+  Unauthorized,
+  AlreadyExist,
+} from 'utils/errors';
 import { type Response } from 'express';
 import { type ObjectSchema } from 'joi';
 
