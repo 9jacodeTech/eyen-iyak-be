@@ -1,4 +1,9 @@
-import { DataValidationError, NotFound, Unauthorized } from 'utils/errors';
+import {
+  DataValidationError,
+  NotFound,
+  Unauthorized,
+  AlreadyExist,
+} from 'utils/errors';
 import { type Response } from 'express';
 import { type ObjectSchema } from 'joi';
 
@@ -32,6 +37,12 @@ export function handleErrors(res: Response, error: unknown | Error) {
 
   if (error instanceof Unauthorized) {
     return res.status(401).json({
+      message: error.message,
+    });
+  }
+
+  if (error instanceof AlreadyExist) {
+    return res.status(409).json({
       message: error.message,
     });
   }
