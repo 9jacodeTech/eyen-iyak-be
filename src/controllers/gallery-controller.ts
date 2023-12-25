@@ -10,6 +10,17 @@ export const fetchGallery = async (req: AuthRequest, res: Response) => {
   });
 };
 
+export const fetchSingleGalleryById = async (
+  req: AuthRequest,
+  res: Response
+) => {
+  const data = await galleryUsecase.getOneById(req.params.id);
+
+  return res.status(200).json({
+    data,
+  });
+};
+
 export const createGallery = async (req: AuthRequest, res: Response) => {
   const input = req.body;
 

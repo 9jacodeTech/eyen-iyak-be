@@ -223,7 +223,8 @@ export type FooterDetail = FooterDetailInput & {
 export type SupportDetailInput = {
   name: string;
   description: string;
-  registrationLink: string;
+  btnLabel: string;
+  btnHref: string;
   imageURL: string;
 };
 
